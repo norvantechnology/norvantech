@@ -1,13 +1,27 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { CheckCircle, Code, Server, Database, LineChart, Users, Globe, Cpu, Shield, Smartphone } from 'lucide-react'
+'use client'; // Mark this component as a Client Component
 
-export const metadata = {
-  title: 'Services & Technologies | Norvan Technology',
-  description: 'Explore our comprehensive range of IT services including web development, backend systems, DevOps, digital marketing, and more.',
-}
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { CheckCircle, Code, Server, Cpu, Shield, Smartphone, Users, LineChart } from 'lucide-react';
+import { motion } from 'framer-motion'; // Import Framer Motion
+
+// Animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 export default function ServicesPage() {
   const services = [
@@ -24,13 +38,6 @@ export default function ServicesPage() {
       description: 'Robust and scalable backend solutions using Node.js, Python, and other modern technologies.',
       technologies: ['Node.js', 'Python', 'Django', 'Express.js', 'FastAPI', 'GraphQL'],
       image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80',
-    },
-    {
-      icon: <Database className="h-8 w-8 text-sky-500" />,
-      title: 'Database Solutions',
-      description: 'Design and implementation of efficient database systems for optimal data management and retrieval.',
-      technologies: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis', 'Firebase', 'Supabase'],
-      image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2021&q=80',
     },
     {
       icon: <Cpu className="h-8 w-8 text-sky-500" />,
@@ -74,25 +81,40 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-sky-50 to-white dark:from-gray-900 dark:to-gray-800 z-0" />
-        
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={staggerContainer}
+            viewport={{ once: true, amount: 0.5 }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
               Our Services & Technologies
-            </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
+            </motion.h1>
+            <motion.p variants={fadeInUp} className="mt-6 text-lg text-gray-600 dark:text-gray-300">
               We offer a comprehensive range of IT services and leverage cutting-edge technologies to deliver innovative solutions for your business.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
       {/* Services Section */}
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="space-y-24">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={staggerContainer}
+            viewport={{ once: true, amount: 0.5 }}
+            className="space-y-24"
+          >
             {services.map((service, index) => (
-              <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}
+              >
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="flex items-center">
                     <div className="h-12 w-12 rounded-full bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center mr-4">
@@ -102,9 +124,9 @@ export default function ServicesPage() {
                       {service.title}
                     </h2>
                   </div>
-                  <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                  <motion.p variants={fadeInUp} className="mt-4 text-lg text-gray-600 dark:text-gray-300">
                     {service.description}
-                  </p>
+                  </motion.p>
                   
                   <div className="mt-8">
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Technologies</h3>
@@ -137,8 +159,13 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 
-                <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                  <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
+                <motion.div
+                  initial={{ opacity: 0, x: index % 2 === 1 ? 50 : -50 }}
+                  whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  className={index % 2 === 1 ? 'lg:col-start-1' : ''}
+                >
+                  <div className="relative w-full h-[400px] lg:h-[500px] xl:h-[600px] rounded-2xl overflow-hidden shadow-xl flex justify-center items-center">
                     <Image 
                       src={service.image}
                       alt={service.title}
@@ -146,83 +173,40 @@ export default function ServicesPage() {
                       className="object-cover"
                     />
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-              Our Process
-            </h2>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-              We follow a structured approach to ensure the successful delivery of every project.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                step: '01',
-                title: 'Discovery',
-                description: 'We start by understanding your business needs, objectives, and challenges to define the project scope.',
-              },
-              {
-                step: '02',
-                title: 'Planning',
-                description: 'We develop a detailed project plan, including timelines, milestones, and resource allocation.',
-              },
-              {
-                step: '03',
-                title: 'Development',
-                description: 'Our team of experts implements the solution using the most appropriate technologies and best practices.',
-              },
-              {
-                step: '04',
-                title: 'Delivery & Support',
-                description: 'We deploy the solution and provide ongoing support and maintenance to ensure optimal performance.',
-              },
-            ].map((process, index) => (
-              <Card key={index} className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="h-12 w-12 rounded-full bg-sky-500 flex items-center justify-center mb-4">
-                    <span className="text-white font-bold">{process.step}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{process.title}</h3>
-                  <p className="mt-2 text-gray-600 dark:text-gray-300">{process.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-sky-500 dark:bg-sky-600">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={staggerContainer}
+            viewport={{ once: true, amount: 0.5 }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <motion.h2 variants={fadeInUp} className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Ready to Transform Your Business?
-            </h2>
-            <p className="mt-4 text-lg text-white/90">
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="mt-4 text-lg text-white/90">
               Let's discuss how Norvan Technology can help you achieve your business goals with our innovative IT solutions.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            </motion.p>
+            <motion.div variants={fadeInUp} className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="rounded-full bg-white text-sky-600 hover:bg-gray-100">
                 <Link href="/contact">Contact Us</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full border-white text-white hover:bg-white/10">
                 <Link href="/portfolio">View Our Work</Link>
               </Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </>
-  )
+  );
 }

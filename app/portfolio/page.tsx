@@ -1,13 +1,30 @@
+
+'use client';
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 
-export const metadata = {
-  title: 'Portfolio | Norvan Technology',
-  description: 'Explore our portfolio of successful projects across various industries, showcasing our expertise in web development, backend systems, DevOps, and digital marketing.',
-}
+// Animation Variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+
 
 export default function PortfolioPage() {
   const projects = [
@@ -68,14 +85,20 @@ export default function PortfolioPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-sky-50 to-white dark:from-gray-900 dark:to-gray-800 z-0" />
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={staggerContainer}
+            viewport={{ once: true, amount: 0.5 }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
               Our Portfolio
-            </h1>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
+            </motion.h1>
+            <motion.p variants={fadeInUp} className="mt-6 text-lg text-gray-600 dark:text-gray-300">
               Explore our successful projects across various industries, showcasing our expertise and commitment to excellence.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
@@ -84,22 +107,31 @@ export default function PortfolioPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300">
+              <motion.div
+                key={index}
+                className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.5 + index * 0.2 }} // Delay based on index for staggered animation
+              >
                 <div className="relative h-64 w-full overflow-hidden">
-                  <Image 
+                  <img
                     src={project.image}
                     alt={project.title}
-                    fill
-                    className="object-cover"
+                    className="object-cover w-full h-full"
                   />
                   <div className="absolute top-4 right-4 bg-sky-500 text-white text-xs font-medium px-2.5 py-1 rounded">
                     {project.category}
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{project.title}</h3>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {project.title}
+                  </h3>
                   <p className="text-sky-500 dark:text-sky-400">{project.client}</p>
-                  <p className="mt-2 text-gray-600 dark:text-gray-300 text-sm">{project.description}</p>
+                  <p className="mt-2 text-gray-600 dark:text-gray-300 text-sm">
+                    {project.description}
+                  </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
                       <span key={techIndex} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-100 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300">
@@ -108,12 +140,12 @@ export default function PortfolioPage() {
                     ))}
                   </div>
                   <div className="mt-6">
-                    <Link href={`/portfolio/${index + 1}`} className="inline-flex items-center text-sky-500 hover:text-sky-600 dark:text-sky-400 dark:hover:text-sky-300">
+                    <a href={`/portfolio/${index + 1}`} className="inline-flex items-center text-sky-500 hover:text-sky-600 dark:text-sky-400 dark:hover:text-sky-300">
                       View Case Study <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
+                    </a>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>

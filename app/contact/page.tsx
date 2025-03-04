@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { useToast } from '@/hooks/use-toast'
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { motion } from 'framer-motion'  // Importing motion
 
 export default function ContactPage() {
   const { toast } = useToast()
@@ -49,7 +50,12 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      <motion.section 
+        className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-sky-50 to-white dark:from-gray-900 dark:to-gray-800 z-0" />
         
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -62,53 +68,62 @@ export default function ContactPage() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Information */}
-      <section className="py-12 bg-white dark:bg-gray-900">
+      <motion.section 
+        className="py-12 bg-white dark:bg-gray-900"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-300">
-              <div className="h-12 w-12 rounded-full bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center mb-4">
-                <MapPin className="h-6 w-6 text-sky-500" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Our Location</h3>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                123 Tech Street, Innovation City<br />
-                California, 10001<br />
-                United States
-              </p>
-            </div>
-            
-            <div className="flex flex-col items-center text-center p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-300">
-              <div className="h-12 w-12 rounded-full bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center mb-4">
-                <Mail className="h-6 w-6 text-sky-500" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Email Us</h3>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                info@norvantech.com<br />
-                support@norvantech.com<br />
-                careers@norvantech.com
-              </p>
-            </div>
-            
-            <div className="flex flex-col items-center text-center p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-300">
-              <div className="h-12 w-12 rounded-full bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center mb-4">
-                <Phone className="h-6 w-6 text-sky-500" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Call Us</h3>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                +1 (555) 123-4567<br />
-                +1 (555) 987-6543<br />
-                Monday-Friday, 9am-6pm PST
-              </p>
-            </div>
+            {/* Service Cards */}
+            {[
+              {
+                icon: <MapPin className="h-6 w-6 text-sky-500" />,
+                title: "Our Location",
+                description: "203, Platinum point, Sudama Chowk, Mota Varachha, Surat, Gujarat 394101, India",
+              },
+              {
+                icon: <Mail className="h-6 w-6 text-sky-500" />,
+                title: "Email Us",
+                description: "norvantechnology@gmail.com",
+              },
+              {
+                icon: <Phone className="h-6 w-6 text-sky-500" />,
+                title: "Call Us",
+                description: "Monday-Friday, 9am-6pm PST",
+              },
+            ].map((service, index) => (
+              <motion.div 
+                key={index}
+                className="flex flex-col items-center text-center p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+              >
+                <div className="h-12 w-12 rounded-full bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center mb-4">
+                  {service.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{service.title}</h3>
+                <p className="mt-2 text-gray-600 dark:text-gray-300">
+                  {service.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Form and Map */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+      <motion.section 
+        className="py-16 bg-gray-50 dark:bg-gray-800"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
@@ -221,58 +236,33 @@ export default function ContactPage() {
               </form>
             </div>
             
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Our Location</h2>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                Visit us at our office or get in touch online.
-              </p>
-              
-              <div className="mt-8 h-[400px] w-full rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27405770525!2d-118.69192047471653!3d34.02016130653294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1622839723328!5m2!1sen!2s"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-              
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Business Hours</h3>
-                  <ul className="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-300">
-                    <li>Monday - Friday: 9am - 6pm</li>
-                    <li>Saturday: 10am - 4pm</li>
-                    <li>Sunday: Closed</li>
-                  </ul>
-                </div>
-                <div className="p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Get Directions</h3>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                    123 Tech Street, Innovation City, California, 10001, United States
-                  </p>
-                  <a 
-                    href="https://maps.google.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-flex items-center text-sky-500 hover:text-sky-600 dark:text-sky-400 dark:hover:text-sky-300 text-sm"
-                  >
-                    View on Google Maps
-                    <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
+            <motion.div 
+              className="h-[400px] w-full rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27405770525!2d-118.69192047471653!3d34.02016130653294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1622839723328!5m2!1sen!2s"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <motion.section 
+        className="py-16 bg-white dark:bg-gray-900"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -310,17 +300,28 @@ export default function ContactPage() {
                 answer: "We implement industry-standard security practices throughout our development process, including secure coding practices, regular security audits, and compliance with relevant data protection regulations."
               },
             ].map((faq, index) => (
-              <div key={index} className="p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-300">
+              <motion.div 
+                key={index} 
+                className="p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+              >
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{faq.question}</h3>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">{faq.answer}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-sky-500 dark:bg-sky-600">
+      <motion.section 
+        className="py-20 bg-sky-500 dark:bg-sky-600"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -329,14 +330,17 @@ export default function ContactPage() {
             <p className="mt-4 text-lg text-white/90">
               Let's discuss how Norvan Technology can help you achieve your business goals with our innovative IT solutions.
             </p>
-            <div className="mt-10">
-              <Button asChild size="lg" className="rounded-full bg-white text-sky-600 hover:bg-gray-100">
-                <a href="tel:+15551234567">Call Us Now</a>
+            <div className="mt-8">
+              <Button 
+                href="#contact" 
+                className="rounded-full bg-white text-sky-500 hover:bg-gray-100"
+              >
+                Contact Us
               </Button>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   )
 }
