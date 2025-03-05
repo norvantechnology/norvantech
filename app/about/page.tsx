@@ -240,7 +240,7 @@ export default function AboutPage() {
               <Button asChild size="lg" className="rounded-full bg-white text-[#0069BF] hover:bg-gray-100 shadow-lg hover:shadow-[#0069BF]/50 transition-shadow">
                 <Link href="/contact">Contact Us</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full border-white text-white hover:bg-white/10 hover:text-white transition-colors">
+              <Button asChild size="lg" className="rounded-full bg-white text-[#0069BF] hover:bg-gray-100">
                 <Link href="/team">Meet Our Team</Link>
               </Button>
             </motion.div>

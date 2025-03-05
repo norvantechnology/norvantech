@@ -245,6 +245,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
+      {/* Testimonials Section */}
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
@@ -270,33 +271,38 @@ export default function Home() {
             className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {[
-              {
-                quote: "Norvan Technology transformed our digital presence with their expertise in web development and digital marketing. Highly recommended!",
-                author: "Sarah Johnson",
-                position: "CEO, InnovateTech",
-                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
-              },
-              {
-                quote: "The team at Norvan Technology delivered our project on time and within budget. Their technical expertise and attention to detail are impressive.",
-                author: "Michael Chen",
-                position: "CTO, GrowthWave",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
-              },
-              {
-                quote: "Working with Norvan Technology has been a game-changer for our business. Their DevOps solutions have significantly improved our development cycle.",
-                author: "Amanda Wright",
-                position: "Lead Engineer, FinTech Solutions",
-                image: "https://images.unsplash.com/photo-1606787579197-3c1f67247f42?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.0.3&q=80&w=400",
-              },
-            ].map((testimonial, index) => (
-              <motion.div key={index} variants={fadeInUp} className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                <p className="text-gray-600 dark:text-gray-300">{testimonial.quote}</p>
-                <div className="mt-6 flex items-center">
-                  <Image src={testimonial.image} alt={testimonial.author} width={50} height={50} className="rounded-full" />
-                  <div className="ml-4">
-                    <p className="font-semibold text-[#0069BF] dark:text-white">{testimonial.author}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">{testimonial.position}</p>
+              "Norvan Technology transformed our digital presence with their expertise in web development and digital marketing. Highly recommended!",
+              "The team at Norvan Technology delivered our project on time and within budget. Their technical expertise and attention to detail are impressive.",
+              "Working with Norvan Technology has been a game-changer for our business. Their DevOps solutions have significantly improved our development cycle.",
+              "We were amazed by the level of professionalism and dedication shown by the Norvan Technology team. They truly understand our business needs.",
+              "Norvan Technology's cloud solutions have helped us scale our operations seamlessly. Their support team is always available and responsive.",
+              "The custom web application developed by Norvan Technology has streamlined our internal processes and improved efficiency across the board.",
+            ].map((quote, index) => (
+              <motion.div key={index} variants={fadeInUp}>
+                <div className="relative bg-gradient-to-br from-[#0069BF] to-[#004080] p-6 rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+                  {/* Quote Icon */}
+                  <div className="absolute -top-6 -right-6 h-12 w-12 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center shadow-lg">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-[#0069BF]"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                      />
+                    </svg>
                   </div>
+
+                  {/* Testimonial Text */}
+                  <p className="text-white dark:text-gray-100 text-lg italic">"{quote}"</p>
+
+                  {/* Gradient Border Effect */}
+                  <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-br from-[#0069BF] to-[#004080] opacity-0 hover:opacity-100 transition-opacity duration-300 -z-10" />
                 </div>
               </motion.div>
             ))}

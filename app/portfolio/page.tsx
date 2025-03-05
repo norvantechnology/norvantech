@@ -99,7 +99,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 bg-white dark:bg-[#0069BF]">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
@@ -185,7 +185,7 @@ export default function PortfolioPage() {
               <Button asChild size="lg" className="rounded-full bg-white text-[#0069BF] hover:bg-gray-100">
                 <Link href="/contact">Contact Us</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full border-white text-white hover:bg-white/10">
+              <Button asChild size="lg" className="rounded-full bg-white text-[#0069BF] hover:bg-gray-100">
                 <Link href="/services">Our Services</Link>
               </Button>
             </div>

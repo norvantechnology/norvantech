@@ -200,7 +200,7 @@ export default function ServicesPage() {
               <Button asChild size="lg" className="rounded-full bg-white text-[#0069BF] hover:bg-gray-100">
                 <Link href="/contact">Contact Us</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full border-white text-white hover:bg-white/10">
+              <Button asChild size="lg" className="rounded-full bg-white text-[#0069BF] hover:bg-gray-100">
                 <Link href="/portfolio">View Our Work</Link>
               </Button>
             </motion.div>

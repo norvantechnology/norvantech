@@ -64,17 +64,18 @@ export default function Header() {
               className={cn(
                 'text-sm font-medium transition-colors',
                 pathname === item.href
-                  ? 'text-[#0069BF]' // Active link color in both light and dark mode
-                  : theme === 'dark'
-                  ? 'text-white hover:text-[#0069BF]' // White text for unselected links in dark mode
-                  : scrolled
-                  ? 'text-[#333333] hover:text-[#0069BF]' // Normal link color when sticky in light mode
-                  : 'text-black hover:text-[#0069BF]' // Normal link color when not sticky in light mode
+                  ? 'text-[#0069BF]' // Active link color
+                  : theme === 'dark' || !theme // Ensure white text in dark mode, even on page load
+                    ? 'text-white hover:text-[#0069BF]'
+                    : 'text-black hover:text-[#0069BF]' // Default light mode color
               )}
             >
               {item.name}
             </Link>
           ))}
+
+
+
         </div>
 
         {/* Actions */}
@@ -128,8 +129,8 @@ export default function Header() {
                       pathname === item.href
                         ? 'text-[#0069BF] dark:text-[#0069BF]' // Active link color in mobile menu
                         : theme === 'dark'
-                        ? 'text-white hover:text-[#0069BF]' // Unselected links in dark mode (mobile)
-                        : 'text-gray-700 dark:text-gray-200 hover:text-[#0069BF]' // Unselected links in light mode (mobile)
+                          ? 'text-white hover:text-[#0069BF]' // Unselected links in dark mode (mobile)
+                          : 'text-gray-700 dark:text-gray-200 hover:text-[#0069BF]' // Unselected links in light mode (mobile)
                     )}
                     onClick={() => setMobileMenuOpen(false)}
                   >
