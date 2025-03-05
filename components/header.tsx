@@ -7,6 +7,8 @@ import { Menu, X, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
+import logo from "@/public/logo.png"; // Import logo image
+import Image from "next/image";
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -42,11 +44,18 @@ export default function Header() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between p-4 lg:px-6" aria-label="Global">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <div className="h-8 w-8 rounded-full bg-[#0069BF] flex items-center justify-center mr-2">
-            <span className="text-white font-bold text-sm">NT</span>
-          </div>
-          <span className="text-lg font-bold text-gray-900 dark:text-white">Norvan Technology</span>
-        </Link>
+  <Image 
+    src={logo} 
+    alt="Norvan Technology Logo" 
+    width={2560} 
+    height={728} 
+    className="w-28 sm:w-32 md:w-36 lg:w-40 xl:w-40 2xl:w-60 h-auto"
+  />
+</Link>
+
+
+
+
 
         {/* Mobile Menu Toggle */}
         <div className="flex lg:hidden">

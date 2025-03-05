@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, ArrowRight, Code, Server, Database, LineChart, Users, Globe } from 'lucide-react';
 import { motion } from 'framer-motion'; // Import Framer Motion
+import { Layers, Smartphone, ShoppingCart, ShieldCheck, TrendingUp, Codepen } from "lucide-react";
 
 // Animation variants
 const fadeInUp = {
@@ -34,9 +35,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-tl from-[#0069BF] via-white to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 z-0" />
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-[#0069BF]/20 dark:bg-[#0069BF]/20 rounded-l-full blur-3xl opacity-50" />
-
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-full overflow-hidden">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial="hidden"
@@ -46,33 +45,24 @@ export default function Home() {
               className="text-center lg:text-left"
             >
               <motion.h1 variants={staggerContainer} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black dark:text-white">
-                {['Innovative', 'IT Solutions', 'for Your Business'].map((line, index) => (
-                  <motion.span
-                    key={index}
-                    variants={textReveal}
-                    className="block"
-                    style={{ display: 'block' }}
-                  >
+                {["AI-Powered Web & SaaS Solutions", "for Business Growth"].map((line, index) => (
+                  <motion.span key={index} variants={textReveal} className="block">
                     {line}
                   </motion.span>
                 ))}
-                <motion.span
-                  variants={textReveal}
-                  className="block text-[#0069BF]"
-                  style={{ display: 'block' }}
-                >
-                  IT Solutions
+                <motion.span variants={textReveal} className="block text-[#0069BF]">
+                  Cloud, DevOps & AI Experts
                 </motion.span>
               </motion.h1>
               <motion.p variants={fadeInUp} className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0">
-                We help businesses transform and thrive in the digital era with cutting-edge technology solutions tailored to your unique needs.
+                Norvan Technology delivers top-tier AI development, full-stack web solutions, SaaS products, cloud computing (AWS, Azure, GCP), DevOps automation, and cutting-edge technologies like Next.js, TypeScript, Web3, and AI automation to scale businesses.
               </motion.p>
               <motion.div variants={fadeInUp} className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button asChild size="lg" className="rounded-full bg-[#0069BF] hover:bg-[#0058a4] text-white">
-                  <Link href="/contact">Get Started</Link>
+                  <Link href="/contact">Start Your Project</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-full">
-                  <Link href="/services">Our Services</Link>
+                  <Link href="/services">Explore Our Solutions</Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -85,18 +75,12 @@ export default function Home() {
             >
               <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                  alt="Norvan Technology Team"
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                  alt="Norvan Technology - AI & Cloud Solutions"
                   fill
                   className="object-cover"
                   priority
                 />
-              </div>
-              <div className="absolute -bottom-6 -left-6 h-24 w-24 bg-[#0069BF] rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">10+</span>
-              </div>
-              <div className="absolute -top-6 -right-6 h-24 w-24 bg-[#0069BF] rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">100%</span>
               </div>
             </motion.div>
           </div>
@@ -114,10 +98,10 @@ export default function Home() {
             className="text-center max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="text-3xl font-bold tracking-tight text-[#0069BF] dark:text-white sm:text-4xl">
-              Our Services
+              Our Expertise
             </motion.h2>
             <motion.p variants={fadeInUp} className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-              We offer a comprehensive range of IT services to help your business grow and succeed.
+              Transforming ideas into powerful digital solutions with cutting-edge technologies.
             </motion.p>
           </motion.div>
 
@@ -131,34 +115,49 @@ export default function Home() {
             {[
               {
                 icon: <Code className="h-8 w-8 text-[#0069BF]" />,
-                title: 'Web Development',
-                description: 'Custom web applications built with React.js, Next.js, and Node.js to meet your specific business needs.',
+                title: 'Full-Stack Web Development',
+                description: 'Scalable, high-performance web applications using Next.js, React.js, and Node.js.'
               },
               {
                 icon: <Server className="h-8 w-8 text-[#0069BF]" />,
-                title: 'Backend Development',
-                description: 'Robust and scalable backend solutions using Node.js, Python, and other modern technologies.',
+                title: 'Backend & API Development',
+                description: 'Robust backend solutions using Node.js, Python, and GraphQL for seamless integration.'
               },
               {
                 icon: <Database className="h-8 w-8 text-[#0069BF]" />,
-                title: 'DevOps',
-                description: 'Streamline your development and operations with our expert DevOps services.',
+                title: 'Cloud & DevOps',
+                description: 'AWS, Azure, Google Cloud, and Kubernetes solutions to enhance scalability and security.'
               },
               {
-                icon: <LineChart className="h-8 w-8 text-[#0069BF]" />,
-                title: 'Digital Marketing',
-                description: 'Increase your online presence and reach your target audience with our digital marketing strategies.',
+                icon: <Layers className="h-8 w-8 text-[#0069BF]" />,
+                title: 'AI & Machine Learning',
+                description: 'Advanced AI-driven applications, chatbots, and automation using Python, TensorFlow, and OpenAI.'
               },
               {
-                icon: <Users className="h-8 w-8 text-[#0069BF]" />,
-                title: 'IT Consulting',
-                description: 'Expert advice and guidance to help you make informed technology decisions for your business.',
+                icon: <Smartphone className="h-8 w-8 text-[#0069BF]" />,
+                title: 'Mobile App Development',
+                description: 'Cross-platform apps with Flutter and React Native for seamless user experiences.'
               },
               {
-                icon: <Globe className="h-8 w-8 text-[#0069BF]" />,
-                title: 'Cloud Solutions',
-                description: 'Secure and scalable cloud infrastructure to support your business operations.',
+                icon: <ShoppingCart className="h-8 w-8 text-[#0069BF]" />,
+                title: 'E-Commerce Solutions',
+                description: 'End-to-end e-commerce platforms with Shopify, WooCommerce, and headless CMS integrations.'
               },
+              {
+                icon: <ShieldCheck className="h-8 w-8 text-[#0069BF]" />,
+                title: 'Cybersecurity & Compliance',
+                description: 'Enterprise-grade security, penetration testing, and GDPR-compliant solutions.'
+              },
+              {
+                icon: <TrendingUp className="h-8 w-8 text-[#0069BF]" />,
+                title: 'Digital Marketing & SEO',
+                description: 'Performance-driven strategies to increase traffic, leads, and conversions.'
+              },
+              {
+                icon: <Codepen className="h-8 w-8 text-[#0069BF]" />,
+                title: 'SaaS Product Development',
+                description: 'Custom SaaS solutions designed to scale with modern cloud-native architectures.'
+              }
             ].map((service, index) => (
               <motion.div key={index} variants={fadeInUp}>
                 <Card className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300">
@@ -184,6 +183,8 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+
 
       {/* Why Choose Us Section */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
