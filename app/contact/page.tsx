@@ -2,12 +2,13 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link' // Import Link from next/link
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { useToast } from '@/hooks/use-toast'
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
-import { motion } from 'framer-motion'  // Importing motion
+import { motion } from 'framer-motion'
 
 export default function ContactPage() {
   const { toast } = useToast()
@@ -331,12 +332,13 @@ export default function ContactPage() {
               Let's discuss how Norvan Technology can help you achieve your business goals with our innovative IT solutions.
             </p>
             <div className="mt-8">
-              <Button 
-                href="#contact" 
-                className="rounded-full bg-white text-sky-500 hover:bg-gray-100"
-              >
-                Contact Us
-              </Button>
+              <Link href="#contact">
+                <Button 
+                  className="rounded-full bg-white text-sky-500 hover:bg-gray-100"
+                >
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
