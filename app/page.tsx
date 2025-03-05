@@ -33,8 +33,8 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-tl from-[#0069BF] via-white to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 z-0" />
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-[#0069BF]/20 dark:bg-[#0069BF]/20 rounded-l-full blur-3xl opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-tl from-[#0069BF] via-white to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 z-0" />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-[#0069BF]/20 dark:bg-[#0069BF]/20 rounded-l-full blur-3xl opacity-50" />
 
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -45,7 +45,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.1 }}
               className="text-center lg:text-left"
             >
-              <motion.h1 variants={staggerContainer} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+              <motion.h1 variants={staggerContainer} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black dark:text-white">
                 {['Innovative', 'IT Solutions', 'for Your Business'].map((line, index) => (
                   <motion.span
                     key={index}

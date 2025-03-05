@@ -95,12 +95,14 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 z-50 overflow-hidden">
+          <div className="lg:hidden fixed inset-0 z-50">
+            {/* Backdrop */}
             <div
               className="fixed inset-0 bg-black/20 backdrop-blur-sm"
               onClick={() => setMobileMenuOpen(false)}
             />
-            <div className="fixed inset-y-0 right-0 w-[100vw] sm:w-64 bg-white dark:bg-gray-900 shadow-lg p-6">
+            {/* Mobile Menu Content */}
+            <div className="fixed inset-y-0 right-0 w-full max-w-[300px] bg-white dark:bg-gray-900 shadow-lg p-6 overflow-y-auto">
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center">
                   <div className="h-8 w-8 rounded-full bg-[#0069BF] flex items-center justify-center mr-2">

@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image'
@@ -23,8 +22,6 @@ const staggerContainer = {
     },
   },
 };
-
-
 
 export default function PortfolioPage() {
   const projects = [
@@ -82,7 +79,7 @@ export default function PortfolioPage() {
     <>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-tl from-[#0069BF] via-white to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 z-0" />        
+        <div className="absolute inset-0 bg-gradient-to-tl from-[#0069BF] via-white to-white dark:from-[#0069BF] dark:via-gray-800 dark:to-gray-800 z-0" />
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             initial="hidden"
@@ -102,7 +99,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 bg-white dark:bg-[#0069BF]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
@@ -111,7 +108,7 @@ export default function PortfolioPage() {
                 className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.5 + index * 0.2 }} // Delay based on index for staggered animation
+                transition={{ duration: 1, delay: 0.5 + index * 0.2 }}
               >
                 <div className="relative h-64 w-full overflow-hidden">
                   <img
@@ -119,7 +116,7 @@ export default function PortfolioPage() {
                     alt={project.title}
                     className="object-cover w-full h-full"
                   />
-                  <div className="absolute top-4 right-4 bg-sky-500 text-white text-xs font-medium px-2.5 py-1 rounded">
+                  <div className="absolute top-4 right-4 bg-[#0069BF] text-white text-xs font-medium px-2.5 py-1 rounded">
                     {project.category}
                   </div>
                 </div>
@@ -127,19 +124,19 @@ export default function PortfolioPage() {
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                     {project.title}
                   </h3>
-                  <p className="text-sky-500 dark:text-sky-400">{project.client}</p>
+                  <p className="text-[#0069BF] dark:text-[#0069BF]">{project.client}</p>
                   <p className="mt-2 text-gray-600 dark:text-gray-300 text-sm">
                     {project.description}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-100 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300">
+                      <span key={techIndex} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#0069BF] text-white dark:bg-[#0069BF] dark:text-white">
                         {tech}
                       </span>
                     ))}
                   </div>
                   <div className="mt-6">
-                    <a href={`/portfolio/${index + 1}`} className="inline-flex items-center text-sky-500 hover:text-sky-600 dark:text-sky-400 dark:hover:text-sky-300">
+                    <a href={`/portfolio/${index + 1}`} className="inline-flex items-center text-[#0069BF] hover:text-[#005b9f] dark:text-[#0069BF] dark:hover:text-[#005b9f]">
                       View Case Study <ArrowRight className="ml-1 h-4 w-4" />
                     </a>
                   </div>
@@ -175,7 +172,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-sky-500 dark:bg-sky-600">
+      <section className="py-20 bg-[#0069BF] dark:bg-[#0069BF]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -185,7 +182,7 @@ export default function PortfolioPage() {
               Let's discuss how Norvan Technology can help you achieve your business goals with our innovative IT solutions.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="rounded-full bg-white text-sky-600 hover:bg-gray-100">
+              <Button asChild size="lg" className="rounded-full bg-white text-[#0069BF] hover:bg-gray-100">
                 <Link href="/contact">Contact Us</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full border-white text-white hover:bg-white/10">
