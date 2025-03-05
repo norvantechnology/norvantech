@@ -28,9 +28,8 @@ export default function AboutPage() {
     <>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-50 to-white dark:from-gray-900 dark:to-gray-800 z-0" />
-        
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div className="absolute inset-0 bg-gradient-to-tl from-[#0069BF] via-white to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 z-0" />
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -119,10 +118,10 @@ export default function AboutPage() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             <motion.div variants={fadeInUp}>
-              <Card className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300 hover:border-sky-500">
+              <Card className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300 hover:border-[#0069BF]">
                 <CardContent className="p-6 text-center">
-                  <div className="mx-auto h-16 w-16 rounded-full bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center mb-4">
-                    <Target className="h-8 w-8 text-sky-500" />
+                  <div className="mx-auto h-16 w-16 rounded-full bg-[#0069BF]/30 dark:bg-[#0069BF]/10 flex items-center justify-center mb-4">
+                    <Target className="h-8 w-8 text-[#0069BF]" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Our Mission</h3>
                   <p className="mt-4 text-gray-600 dark:text-gray-300">
@@ -133,10 +132,10 @@ export default function AboutPage() {
             </motion.div>
 
             <motion.div variants={fadeInUp}>
-              <Card className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300 hover:border-sky-500">
+              <Card className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300 hover:border-[#0069BF]">
                 <CardContent className="p-6 text-center">
-                  <div className="mx-auto h-16 w-16 rounded-full bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center mb-4">
-                    <Award className="h-8 w-8 text-sky-500" />
+                  <div className="mx-auto h-16 w-16 rounded-full bg-[#0069BF]/30 dark:bg-[#0069BF]/10 flex items-center justify-center mb-4">
+                    <Award className="h-8 w-8 text-[#0069BF]" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Our Vision</h3>
                   <p className="mt-4 text-gray-600 dark:text-gray-300">
@@ -147,10 +146,10 @@ export default function AboutPage() {
             </motion.div>
 
             <motion.div variants={fadeInUp}>
-              <Card className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300 hover:border-sky-500">
+              <Card className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300 hover:border-[#0069BF]">
                 <CardContent className="p-6 text-center">
-                  <div className="mx-auto h-16 w-16 rounded-full bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center mb-4">
-                    <Heart className="h-8 w-8 text-sky-500" />
+                  <div className="mx-auto h-16 w-16 rounded-full bg-[#0069BF]/30 dark:bg-[#0069BF]/10 flex items-center justify-center mb-4">
+                    <Heart className="h-8 w-8 text-[#0069BF]" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Our Values</h3>
                   <p className="mt-4 text-gray-600 dark:text-gray-300">
@@ -189,14 +188,14 @@ export default function AboutPage() {
                   'Measure results and continuously improve',
                 ].map((item, index) => (
                   <div key={index} className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-sky-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-[#0069BF] mt-0.5 flex-shrink-0" />
                     <span className="ml-3 text-gray-600 dark:text-gray-300">{item}</span>
                   </div>
                 ))}
               </motion.div>
               
               <motion.div variants={fadeInUp} className="mt-10">
-                <Button asChild size="lg" className="rounded-full bg-sky-500 hover:bg-sky-600 text-white shadow-lg hover:shadow-sky-500/50 transition-shadow">
+                <Button asChild size="lg" className="rounded-full bg-[#0069BF] hover:bg-[#0069BF]/80 text-white shadow-lg hover:shadow-[#0069BF]/50 transition-shadow">
                   <Link href="/contact">Work With Us</Link>
                 </Button>
               </motion.div>
@@ -222,7 +221,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-sky-500 dark:bg-sky-600">
+      <section className="py-20 bg-[#0069BF] dark:bg-[#0069BF]/80">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             initial="hidden"
@@ -238,7 +237,7 @@ export default function AboutPage() {
               Let's discuss how Norvan Technology can help you achieve your business goals with our innovative IT solutions.
             </motion.p>
             <motion.div variants={fadeInUp} className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="rounded-full bg-white text-sky-600 hover:bg-gray-100 shadow-lg hover:shadow-sky-500/50 transition-shadow">
+              <Button asChild size="lg" className="rounded-full bg-white text-[#0069BF] hover:bg-gray-100 shadow-lg hover:shadow-[#0069BF]/50 transition-shadow">
                 <Link href="/contact">Contact Us</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full border-white text-white hover:bg-white/10 hover:text-white transition-colors">
