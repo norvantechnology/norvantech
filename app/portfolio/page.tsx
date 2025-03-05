@@ -89,7 +89,7 @@ export default function PortfolioPage() {
             initial="hidden"
             whileInView="visible"
             variants={staggerContainer}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center max-w-3xl mx-auto"
           >
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">

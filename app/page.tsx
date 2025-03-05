@@ -42,7 +42,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               variants={staggerContainer}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.1 }}
               className="text-center lg:text-left"
             >
               <motion.h1 variants={staggerContainer} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -80,7 +80,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.1 }}
               className="relative"
             >
               <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
@@ -110,7 +110,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             variants={staggerContainer}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
@@ -125,7 +125,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             variants={staggerContainer}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {[
@@ -193,7 +193,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               variants={staggerContainer}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.1 }}
             >
               <motion.h2 variants={fadeInUp} className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
                 Why Choose Norvan Technology?
@@ -228,7 +228,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.1 }}
               className="relative"
             >
               <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-xl">
@@ -251,7 +251,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             variants={staggerContainer}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
@@ -266,7 +266,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             variants={staggerContainer}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {[
@@ -328,7 +328,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             variants={staggerContainer}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="text-3xl font-bold tracking-tight text-white sm:text-4xl">

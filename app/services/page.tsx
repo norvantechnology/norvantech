@@ -86,7 +86,7 @@ export default function ServicesPage() {
             initial="hidden"
             whileInView="visible"
             variants={staggerContainer}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center max-w-3xl mx-auto"
           >
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -106,7 +106,7 @@ export default function ServicesPage() {
             initial="hidden"
             whileInView="visible"
             variants={staggerContainer}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="space-y-24"
           >
             {services.map((service, index) => (
@@ -162,7 +162,7 @@ export default function ServicesPage() {
                 <motion.div
                   initial={{ opacity: 0, x: index % 2 === 1 ? 50 : -50 }}
                   whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } }}
-                  viewport={{ once: true, amount: 0.5 }}
+                  viewport={{ once: true, amount: 0.1 }}
                   className={index % 2 === 1 ? 'lg:col-start-1' : ''}
                 >
                   <div className="relative w-full h-[400px] lg:h-[500px] xl:h-[600px] rounded-2xl overflow-hidden shadow-xl flex justify-center items-center">
@@ -187,7 +187,7 @@ export default function ServicesPage() {
             initial="hidden"
             whileInView="visible"
             variants={staggerContainer}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="text-3xl font-bold tracking-tight text-white sm:text-4xl">

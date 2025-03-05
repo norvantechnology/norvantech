@@ -35,7 +35,7 @@ export default function AboutPage() {
             initial="hidden"
             whileInView="visible"
             variants={staggerContainer}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center max-w-3xl mx-auto"
           >
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -55,7 +55,7 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.1 }}
               className="relative"
             >
               <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
@@ -72,7 +72,7 @@ export default function AboutPage() {
               initial="hidden"
               whileInView="visible"
               variants={staggerContainer}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.1 }}
             >
               <motion.h2 variants={fadeInUp} className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
                 Our Story
@@ -100,7 +100,7 @@ export default function AboutPage() {
             initial="hidden"
             whileInView="visible"
             variants={staggerContainer}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <motion.h2 variants={fadeInUp} className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
@@ -115,7 +115,7 @@ export default function AboutPage() {
             initial="hidden"
             whileInView="visible"
             variants={staggerContainer}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             <motion.div variants={fadeInUp}>
@@ -171,7 +171,7 @@ export default function AboutPage() {
               initial="hidden"
               whileInView="visible"
               variants={staggerContainer}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.1 }}
             >
               <motion.h2 variants={fadeInUp} className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
                 Our Approach
@@ -205,7 +205,7 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.1 }}
               className="relative"
             >
               <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
@@ -228,7 +228,7 @@ export default function AboutPage() {
             initial="hidden"
             whileInView="visible"
             variants={staggerContainer}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="text-center max-w-3xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
