@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: 'Norvan Technology',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'Norvan Technology',
