@@ -11,7 +11,36 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Norvan Technology | IT Solutions & Services',
   description: 'Norvan Technology provides expert IT solutions with Node.js, React.js, Next.js, Python, DevOps, and Digital Marketing services.',
-  keywords: 'IT company, web development, Node.js, React.js, Next.js, Python, DevOps, Digital Marketing',
+  keywords: [
+    'IT company', 
+    'web development', 
+    'Node.js', 
+    'React.js', 
+    'Next.js', 
+    'Python', 
+    'DevOps', 
+    'Digital Marketing', 
+    'IT solutions', 
+    'software development', 
+    'cloud services', 
+    'cybersecurity', 
+    'data analytics', 
+    'AI solutions', 
+    'machine learning', 
+    'IT consulting', 
+    'enterprise solutions', 
+    'mobile app development', 
+    'e-commerce solutions', 
+    'UI/UX design', 
+    'IT infrastructure', 
+    'network solutions', 
+    'IT support', 
+    'technology consulting', 
+    'IT outsourcing', 
+    'business intelligence', 
+    'IT modernization', 
+    'digital transformation'
+  ],
   openGraph: {
     title: 'Norvan Technology | IT Solutions & Services',
     description: 'Expert IT solutions with Node.js, React.js, Next.js, Python, DevOps, and Digital Marketing services.',
@@ -28,6 +57,31 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Norvan Technology | IT Solutions & Services',
+    description: 'Expert IT solutions with Node.js, React.js, Next.js, Python, DevOps, and Digital Marketing services.',
+    images: ['https://images.unsplash.com/photo-1581091226825-a6a2a5aee158'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
@@ -37,6 +91,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="canonical" href="https://norvantech.com" />
+        <meta name="author" content="Norvan Technology" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#ffffff" />
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
