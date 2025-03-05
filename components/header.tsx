@@ -64,10 +64,8 @@ export default function Header() {
               className={cn(
                 'text-sm font-medium transition-colors',
                 pathname === item.href
-                  ? 'text-[#0069BF]' // Active link color
-                  : theme === 'dark' || !theme // Ensure white text in dark mode, even on page load
-                    ? 'text-white hover:text-[#0069BF]'
-                    : 'text-black hover:text-[#0069BF]' // Default light mode color
+                  ? 'text-[#0069BF]' // Selected link color in both modes
+                  : 'text-black dark:text-white hover:text-[#0069BF]' // Unselected: Black (light) & White (dark)
               )}
             >
               {item.name}
