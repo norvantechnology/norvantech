@@ -36,7 +36,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-tl from-[#0069BF] via-white to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 z-0" />
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-[#0069BF]/20 dark:bg-[#0069BF]/20 rounded-l-full blur-3xl opacity-50" />
 
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-full overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial="hidden"
