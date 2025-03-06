@@ -5,6 +5,8 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Send } from 'luci
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { motion } from 'framer-motion';
+import logo from "@/public/logo.png"; // Import logo image
+import Image from "next/image";
 
 export default function Footer() {
   const socialLinks = [
@@ -58,12 +60,15 @@ export default function Footer() {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <div className="flex items-center mb-4">
-              <div className="h-10 w-10 rounded-full bg-[#0069BF] flex items-center justify-center shadow-md">
-                <span className="text-white font-bold text-lg">NT</span>
-              </div>
-              <span className="ml-3 text-2xl font-bold text-gray-900 dark:text-white">
-                Norvan Technology
-              </span>
+              <Link href="/" className="flex items-center">
+                <Image
+                  src={logo}
+                  alt="Norvan Technology Logo"
+                  width={2560}
+                  height={728}
+                  className="w-28 sm:w-32 md:w-36 lg:w-40 xl:w-40 2xl:w-60 h-auto"
+                />
+              </Link>
             </div>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
               Innovative IT solutions empowering businesses in the digital transformation journey.

@@ -44,19 +44,14 @@ export default function Header() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between p-4 lg:px-6" aria-label="Global">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-  <Image 
-    src={logo} 
-    alt="Norvan Technology Logo" 
-    width={2560} 
-    height={728} 
-    className="w-28 sm:w-32 md:w-36 lg:w-40 xl:w-40 2xl:w-60 h-auto"
-  />
-</Link>
-
-
-
-
-
+          <Image
+            src={logo}
+            alt="Norvan Technology Logo"
+            width={2560}
+            height={728}
+            className="w-28 sm:w-32 md:w-36 lg:w-40 xl:w-40 2xl:w-60 h-auto"
+          />
+        </Link>
         {/* Mobile Menu Toggle */}
         <div className="flex lg:hidden">
           <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(true)}>
@@ -112,12 +107,7 @@ export default function Header() {
             {/* Mobile Menu Content */}
             <div className="fixed right-0 w-full max-w-[300px] bg-white dark:bg-gray-900 shadow-lg p-6">
               <div className="flex justify-between items-center mb-6">
-                <div className="flex items-center">
-                  <div className="h-8 w-8 rounded-full bg-[#0069BF] flex items-center justify-center mr-2">
-                    <span className="text-white font-bold text-sm">NT</span>
-                  </div>
-                  <span className="text-lg font-bold">Norvan Technology</span>
-                </div>
+                
                 <Button
                   variant="ghost"
                   size="icon"

@@ -197,20 +197,21 @@ export default function Home() {
               viewport={{ once: true, amount: 0.1 }}
             >
               <motion.h2 variants={fadeInUp} className="text-3xl font-bold tracking-tight text-[#0069BF] dark:text-white sm:text-4xl">
-                Why Choose Norvan Technology?
+                Why Choose Norvan Technology for Your Business?
               </motion.h2>
               <motion.p variants={fadeInUp} className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-                We combine technical expertise with business acumen to deliver solutions that drive growth and efficiency.
+                As a leader in AI-powered solutions, cloud computing, and SaaS development, we combine technical expertise with business insight to create high-performance digital solutions that accelerate growth and efficiency.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="mt-8 space-y-4">
                 {[
-                  'Expert team with diverse technical skills',
-                  'Tailored solutions to meet your specific needs',
-                  'Commitment to quality and excellence',
-                  'Transparent communication and collaboration',
-                  'Ongoing support and maintenance',
-                  'Competitive pricing and flexible engagement models',
+                  'AI-driven solutions for automation and efficiency',
+                  'Full-stack development expertise with modern technologies like Next.js and React.js',
+                  'Tailored cloud solutions with AWS, Azure, and GCP for scalability',
+                  'Seamless integration of DevOps automation and CI/CD pipelines',
+                  'Proven track record in building secure, high-performance web and mobile applications',
+                  'Comprehensive support, maintenance, and performance optimization',
+                  'Competitive pricing with flexible engagement models to fit your business needs',
                 ].map((item, index) => (
                   <div key={index} className="flex items-start">
                     <CheckCircle className="h-6 w-6 text-[#0069BF] mt-0.5 flex-shrink-0" />
@@ -221,7 +222,7 @@ export default function Home() {
 
               <motion.div variants={fadeInUp} className="mt-10">
                 <Button asChild size="lg" className="rounded-full bg-[#0069BF] hover:bg-[#0058a4] text-white">
-                  <Link href="/about">Learn More About Us</Link>
+                  <Link href="/about">Learn More About Our Expertise</Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -235,7 +236,7 @@ export default function Home() {
               <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                  alt="Norvan Technology Team Collaboration"
+                  alt="Norvan Technology - Expert Team Collaboration"
                   fill
                   className="object-cover"
                 />
@@ -245,8 +246,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      {/* Testimonials Section */}
+
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
