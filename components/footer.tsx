@@ -38,11 +38,11 @@ export default function Footer() {
 
   const quickLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Our Services', href: '/services' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Contact Us', href: '/contact' }
   ];
 
   return (
@@ -63,7 +63,7 @@ export default function Footer() {
               <Link href="/" className="flex items-center">
                 <Image
                   src={logo}
-                  alt="Norvan Technology Logo"
+                  alt="Norvan Technology Logo - AI, Cloud, and SaaS Solutions"
                   width={2560}
                   height={728}
                   className="w-28 sm:w-32 md:w-36 lg:w-40 xl:w-40 2xl:w-60 h-auto"
@@ -71,7 +71,7 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
-              Innovative IT solutions empowering businesses in the digital transformation journey.
+              Norvan Technology is a leading provider of AI-powered solutions, cloud computing, and SaaS development. We specialize in modern technologies like Next.js, React.js, and Web3 to deliver scalable, high-performance digital solutions for businesses worldwide.
             </p>
 
             {/* Social Links */}
@@ -131,7 +131,7 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-[#0069BF] mt-0.5 flex-shrink-0" />
                 <span className="ml-3 text-sm text-gray-600 dark:text-gray-400">
-                  203, Platinum point, Sudama Chowk, Mota Varachha, Surat, Gujarat, 394101
+                  203, Platinum Point, Sudama Chowk, Mota Varachha, Surat, Gujarat, 394101
                 </span>
               </li>
               <li className="flex items-center">
@@ -154,7 +154,7 @@ export default function Footer() {
               Stay Updated
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Subscribe to our newsletter for latest updates
+              Subscribe to our newsletter for the latest updates on AI, cloud computing, SaaS development, and cutting-edge technologies.
             </p>
             <form className="mt-4 flex flex-col gap-2">
               <div className="relative">

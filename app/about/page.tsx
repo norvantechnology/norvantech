@@ -28,8 +28,8 @@ export default function AboutPage() {
     <>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-tl from-[#0069BF] via-white to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 z-0" />
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="absolute inset-0 bg-gradient-to-tl from-[#0069BF] via-white to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 z-0" />
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -78,13 +78,13 @@ export default function AboutPage() {
               </motion.h2>
               <motion.div variants={fadeInUp} className="mt-6 space-y-6 text-gray-600 dark:text-gray-300">
                 <p>
-                  Founded in 2018, Norvan Technology was born out of a passion for leveraging technology to solve complex business challenges. Our founders, with decades of combined experience in the tech industry, recognized the need for a more personalized and comprehensive approach to IT solutions.
+                  Norvan Technology was founded with a vision to revolutionize the way businesses leverage technology. Our journey began with a small but passionate team of developers and IT enthusiasts who shared a common goal: to create innovative, scalable, and impactful solutions for businesses of all sizes.
                 </p>
                 <p>
-                  What started as a small team of dedicated developers has grown into a full-service IT company with expertise across multiple domains, including web development, backend systems, DevOps, and digital marketing.
+                  Over the years, we have grown into a trusted partner for companies across industries, helping them navigate the complexities of digital transformation. Our expertise spans across AI-powered solutions, cloud computing, SaaS development, and modern web technologies like Next.js, React.js, and Web3.
                 </p>
                 <p>
-                  Today, we pride ourselves on our ability to deliver innovative solutions that drive real business results for our clients. Our team of experts stays at the forefront of technological advancements to ensure we provide cutting-edge solutions tailored to each client's unique needs.
+                  What sets us apart is our commitment to understanding our clients' unique challenges and delivering tailored solutions that drive measurable results. We take pride in our ability to adapt to the ever-evolving tech landscape, ensuring that our clients stay ahead of the curve.
                 </p>
               </motion.div>
             </motion.div>
