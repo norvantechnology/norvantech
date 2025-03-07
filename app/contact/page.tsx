@@ -46,6 +46,20 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    try {
+      const response = fetch("https://formsubmit.co/norvantechnology@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+    } catch (error) {
+      console.log("error", error)
+
+    }
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
 
@@ -275,8 +289,7 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, scale: 1, transition: { duration: 0.8, ease: 'easeOut' } }}
               viewport={{ once: true, amount: 0.1 }}
             >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27405770525!2d-118.69192047471653!3d34.02016130653294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1622839723328!5m2!1sen!2s"
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.43043418535427!2d72.8752038506533!3d21.236331174696836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6712dac2c41a8a81%3A0x97fade255a3c5084!2sNorvan%20Technology!5e0!3m2!1sen!2sin!4v1741338052292!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

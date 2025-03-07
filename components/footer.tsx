@@ -75,7 +75,7 @@ export default function Footer() {
             </p>
 
             {/* Social Links */}
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.name}
@@ -88,7 +88,7 @@ export default function Footer() {
                   <social.icon className="h-6 w-6" />
                 </motion.a>
               ))}
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Quick Links */}
