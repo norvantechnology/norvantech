@@ -73,9 +73,9 @@ export default function Home() {
               viewport={{ once: true, amount: 0.1 }}
               className="relative"
             >
-              <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
+              <div className="relative h-[550px] w-full rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                  src="/banner.png"
                   alt="Norvan Technology - AI & Cloud Solutions"
                   fill
                   className="object-cover"
