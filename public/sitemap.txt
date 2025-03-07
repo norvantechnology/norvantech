@@ -1,10 +1,6 @@
-norvantech.com
-norvantech.com/about
-norvantech.com/services
-norvantech.com/portfolio
-norvantech.com/contact
-norvantech.com/blog
-
-
-
-
+https://norvantech.com/
+https://norvantech.com/about
+https://norvantech.com/services
+https://norvantech.com/portfolio
+https://norvantech.com/contact
+https://norvantech.com/blog
