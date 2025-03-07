@@ -200,18 +200,20 @@ export default function Home() {
                 Why Choose Norvan Technology for Your Business?
               </motion.h2>
               <motion.p variants={fadeInUp} className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-                As a leader in AI-powered solutions, cloud computing, and SaaS development, we combine technical expertise with business insight to create high-performance digital solutions that accelerate growth and efficiency.
+                Norvan Technology delivers top-tier AI development, full-stack web solutions, SaaS products, cloud computing (AWS, Azure, GCP), DevOps automation, and cutting-edge technologies like Next.js, TypeScript, Web3, and AI automation to scale businesses.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="mt-8 space-y-4">
                 {[
-                  'AI-driven solutions for automation and efficiency',
-                  'Full-stack development expertise with modern technologies like Next.js and React.js',
-                  'Tailored cloud solutions with AWS, Azure, and GCP for scalability',
-                  'Seamless integration of DevOps automation and CI/CD pipelines',
-                  'Proven track record in building secure, high-performance web and mobile applications',
-                  'Comprehensive support, maintenance, and performance optimization',
-                  'Competitive pricing with flexible engagement models to fit your business needs',
+                  'Full-Stack Web Development with Next.js, React.js, and Node.js',
+                  'Backend & API Development using Node.js, Python, and GraphQL',
+                  'Cloud & DevOps solutions with AWS, Azure, Google Cloud, and Kubernetes',
+                  'AI & Machine Learning applications, chatbots, and automation',
+                  'Mobile App Development with Flutter and React Native',
+                  'E-Commerce Solutions with Shopify, WooCommerce, and headless CMS',
+                  'Cybersecurity & Compliance with enterprise-grade security and GDPR',
+                  'Digital Marketing & SEO strategies for traffic and conversions',
+                  'Custom SaaS Product Development with cloud-native architectures',
                 ].map((item, index) => (
                   <div key={index} className="flex items-start">
                     <CheckCircle className="h-6 w-6 text-[#0069BF] mt-0.5 flex-shrink-0" />
@@ -222,7 +224,7 @@ export default function Home() {
 
               <motion.div variants={fadeInUp} className="mt-10">
                 <Button asChild size="lg" className="rounded-full bg-[#0069BF] hover:bg-[#0058a4] text-white">
-                  <Link href="/about">Learn More About Our Expertise</Link>
+                  <Link href="/services">Explore Our Solutions</Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -235,8 +237,8 @@ export default function Home() {
             >
               <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                  alt="Norvan Technology - Expert Team Collaboration"
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                  alt="Norvan Technology - AI & Cloud Solutions"
                   fill
                   className="object-cover"
                 />
