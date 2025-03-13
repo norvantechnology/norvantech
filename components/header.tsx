@@ -7,7 +7,7 @@ import { Menu, X, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
-import logo from "@/public/logo.png"; // Import logo image
+import logo from "@/public/logo.webp"; // Import logo image
 import Image from "next/image";
 
 const navigation = [

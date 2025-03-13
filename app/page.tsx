@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, ArrowRight, Code, Server, Database, LineChart, Users, Globe } from 'lucide-react';
 import { motion } from 'framer-motion'; // Import Framer Motion
 import { Layers, Smartphone, ShoppingCart, ShieldCheck, TrendingUp, Codepen } from "lucide-react";
+import Script from 'next/script'; // For adding external scripts
 
 // Animation variants
 const fadeInUp = {
@@ -30,8 +31,45 @@ const textReveal = {
 };
 
 export default function Home() {
+  // Structured Data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Norvan Technology",
+    "url": "https://norvantech.com",
+    "logo": "https://norvantech.com/logo.webp",
+    "description": "Norvan Technology delivers top-tier AI development, full-stack web solutions, SaaS products, cloud computing, and cutting-edge technologies.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-123-456-7890",
+      "contactType": "customer service",
+      "email": "info@norvantech.com"
+    },
+    "sameAs": [
+      "https://www.facebook.com/norvantech",
+      "https://www.twitter.com/norvantech",
+      "https://www.linkedin.com/company/norvantech"
+    ]
+  };
+
   return (
     <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
+      {/* Social Media Scripts */}
+      <Script
+        src="https://platform.linkedin.com/in.js"
+        strategy="lazyOnload"
+      />
+      <Script
+        src="https://platform.twitter.com/widgets.js"
+        strategy="lazyOnload"
+      />
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-tl from-[#0069BF] via-white to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 z-0" />
@@ -45,7 +83,7 @@ export default function Home() {
               className="text-center lg:text-left"
             >
               <motion.h1 variants={staggerContainer} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black dark:text-white">
-                {["AI-Powered Web & SaaS Solutions", "for Business Growth"].map((line, index) => (
+                {["Web, App & SaaS Solutions", "for Business Growth"].map((line, index) => (
                   <motion.span key={index} variants={textReveal} className="block">
                     {line}
                   </motion.span>
@@ -75,7 +113,7 @@ export default function Home() {
             >
               <div className="relative h-[550px] w-full rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/banner.png"
+                  src="/banner.webp" // Use WebP format for better performance
                   alt="Norvan Technology - AI & Cloud Solutions"
                   fill
                   className="object-cover"
@@ -116,7 +154,7 @@ export default function Home() {
               {
                 icon: <Code className="h-8 w-8 text-[#0069BF]" />,
                 title: 'Full-Stack Web Development',
-                description: 'Scalable, high-performance web applications using Next.js, React.js, and Node.js.'
+                description: 'Scalable, high-performance web solutions using Next.js, React.js, and Node.js.'
               },
               {
                 icon: <Server className="h-8 w-8 text-[#0069BF]" />,
@@ -125,13 +163,13 @@ export default function Home() {
               },
               {
                 icon: <Database className="h-8 w-8 text-[#0069BF]" />,
-                title: 'Cloud & DevOps',
+                title: 'Cloud & DevOps Solutions',
                 description: 'AWS, Azure, Google Cloud, and Kubernetes solutions to enhance scalability and security.'
               },
               {
                 icon: <Layers className="h-8 w-8 text-[#0069BF]" />,
                 title: 'AI & Machine Learning',
-                description: 'Advanced AI-driven applications, chatbots, and automation using Python, TensorFlow, and OpenAI.'
+                description: 'AI-powered solutions, chatbots, and automation using Python, TensorFlow, and OpenAI.'
               },
               {
                 icon: <Smartphone className="h-8 w-8 text-[#0069BF]" />,
@@ -151,7 +189,7 @@ export default function Home() {
               {
                 icon: <TrendingUp className="h-8 w-8 text-[#0069BF]" />,
                 title: 'Digital Marketing & SEO',
-                description: 'Performance-driven strategies to increase traffic, leads, and conversions.'
+                description: 'Performance-driven digital marketing strategies to increase traffic, leads, and conversions.'
               },
               {
                 icon: <Codepen className="h-8 w-8 text-[#0069BF]" />,
@@ -183,8 +221,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
-
 
       {/* Why Choose Us Section */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
@@ -248,7 +284,7 @@ export default function Home() {
         </div>
       </section>
 
-
+      {/* Testimonials Section */}
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
@@ -312,6 +348,40 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Social Media Sharing Buttons */}
+      <div className="fixed bottom-4 right-4 flex flex-col space-y-2">
+        <a
+          href="https://www.facebook.com/sharer/sharer.php?u=https://norvantech.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors"
+        >
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.234 2.686.234v2.953h-1.513c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+          </svg>
+        </a>
+        <a
+          href="https://twitter.com/intent/tweet?url=https://norvantech.com&text=Check%20out%20Norvan%20Technology%20for%20AI,%20Cloud,%20and%20DevOps%20solutions!"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-400 text-white p-2 rounded-full hover:bg-blue-500 transition-colors"
+        >
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+          </svg>
+        </a>
+        <a
+          href="https://www.linkedin.com/shareArticle?mini=true&url=https://norvantech.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-800 text-white p-2 rounded-full hover:bg-blue-900 transition-colors"
+        >
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+      </div>
     </>
   );
 }

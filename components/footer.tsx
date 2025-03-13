@@ -5,7 +5,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Send } from 'luci
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { motion } from 'framer-motion';
-import logo from "@/public/logo.png"; // Import logo image
+import logo from "@/public/logo.webp"; // Import logo image
 import Image from "next/image";
 
 export default function Footer() {
